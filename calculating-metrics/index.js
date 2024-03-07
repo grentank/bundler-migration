@@ -31,8 +31,40 @@ const diff = craInitTime.map((metric) => ({
 }));
 console.table(diff);
 
+const diffPage = craPageTransitions.map((metric) => ({
+  ...metric,
+  diff: (metric.end - metric.start) / 1000,
+}));
+console.table(diffPage);
+
 const buildDiff = craBuildTime.map((metric) => ({
   ...metric,
   diff: (metric.end - metric.start) / 1000,
 }));
 console.table(buildDiff);
+
+// Нужно проверить на своём компе всё, что ниже
+const craToViteInitTime = [
+  // {start: 1709777846085, end: 1709777853278},
+  {start: 1709777982351, end: 1709777985925},
+  {start: 1709778018873, end: 1709778021989},
+  {start: 1709778048310, end: 1709778051512},
+]
+
+const toViteInitDiff = craToViteInitTime.map((metric) => ({
+    ...metric,
+    diff: (metric.end - metric.start) / 1000,
+}))
+console.table(toViteInitDiff);
+
+const craToVitePageTransitions = [
+  { start: 1709778302307, end: 1709778302316 },
+  {start: 1709778431563, end: 1709778431571},
+  {start: 1709778547740, end: 1709778547747}
+];
+const toVitePageTransitionsDiff = craToVitePageTransitions.map((metric) => ({
+    ...metric,
+    diff: (metric.end - metric.start) / 1000,
+}));
+console.table(toVitePageTransitionsDiff);
+

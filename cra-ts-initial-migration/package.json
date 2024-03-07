@@ -33,8 +33,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node now.js && vite --open",
+    "build": "node now.js && vite build && node now.js",
     "start": "node now.js && react-scripts start",
     "build:cra": "node now.js && react-scripts build && node now.js",
     "test": "react-scripts test",
